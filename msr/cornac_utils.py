@@ -3,7 +3,7 @@
 
 import pandas as pd
 import numpy as np
-from tqdm.notebook import tqdm  # Progress Bar 생성을 위해 추가
+from tqdm import tqdm  # Progress Bar 생성을 위해 추가
 from msr.constants import (
     DEFAULT_USER_COL,
     DEFAULT_ITEM_COL,
