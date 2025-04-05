@@ -323,6 +323,8 @@ def negative_feedback_sampler(
         pd.DataFrame(users, columns=[col_user]),
         pd.DataFrame(items, columns=[col_item]),
         user_item_filter_df=df,
+        user_col=col_user,
+        item_col=col_item
     )
     df_neg[col_label] = 0
 
@@ -359,6 +361,9 @@ def negative_feedback_sampler(
         .reset_index(drop=True)
         .sort_values(col_user)
     )
+
+    # Reordering columns
+    df_sample = df_sample[[col_user, col_item, col_label]]
 
     return df_sample
 
